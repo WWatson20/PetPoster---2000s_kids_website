@@ -8,11 +8,11 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Student Information
 
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+|               |      Information       |
+|:-------------:|:----------------------:|
+| Student Name  |     William Watson     |
+| Student ID    |       921294683        |
+| Student Email | wwatson1@mail.sfsu.edu |
 
 
 
