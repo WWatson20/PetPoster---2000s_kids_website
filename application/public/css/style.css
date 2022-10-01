@@ -1,8 +1,38 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  padding: 0px;
+  font: 20px "Bahnschrift";
+  background: white;
+  width: auto;
+  margin:0
+}
+main {
+  background: lightgray;
+  border: 1px solid #333;
+  min-height: 800px;
 }
 
+header{
+  position: relative;
+  width: 100%;
+  background: darkorange;
+  font: 18px "Agency FB";
+  text-align: center;
+  border: 1px solid #333;
+}
+
+
 a {
-  color: #00B7FF;
+  color: blue;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  /* negative value of footer height */
+  height: 40px;
+  background-color: darkorange;
+  border: 1px solid #333;
 }
