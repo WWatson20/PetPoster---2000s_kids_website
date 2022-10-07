@@ -1,8 +1,87 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Bahnschrift";
+  background: white;
+  margin:0
+
+}
+main {
+  background: lightgray;
+  border: 1px solid #333;
+  min-height: 800px;
+
+}
+
+input{
+  background: lightgreen;
+  border: 1px black;
+  border-radius: 100px;
+}
+
+header{
+  position: relative;
+  width: 100%;
+  background: seagreen;
+  font: 18px "Agency FB";
+  text-align: center;
+  border: 2px solid #333;
+}
+
+.text{
+  word-wrap: break-word;
+  font-size: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+.textFrontPage{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 70%;
+  font-size: 35px;
 }
 
 a {
-  color: #00B7FF;
+  color: darkblue;
+  font-size: 22px
+}
+
+img{
+  max-height: 400px;
+  max-width: 500px;
+
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  /* negative value of footer height */
+  height: 40px;
+  background: seagreen;
+  border: 2px solid #333;
+}
+
+.forms{
+  margin-left: 33%;
+  margin-top: 100px;
+  max-width: 450px;
+  padding: 35px;
+  border: 5px solid seagreen;
+  background: mediumseagreen;
+  border-radius: 25px;
+}
+
+.Posts{
+  border: 5px solid seagreen;
+  background: darkseagreen;
+  text-align: center;
+  border-radius: 100px;
+  max-width: 1200px;
+  margin: 50px 15%;
+
 }
