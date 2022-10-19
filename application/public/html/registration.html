@@ -7,6 +7,11 @@
     <script  defer type="text/javascript"
             src="../js/websiteJS.js"></script>
 </head>
+
+
+
+
+
 <body>
     <header><h1>PetPoster - Registration</h1>
     <nav>
@@ -18,11 +23,15 @@
     </nav><br></header>
     <main>
         <br>
+
         <div class ="forms">
-    <form>
+    <form id="form">
+
+        <div class= "error" id="error">
+        </div>
 
         <label for="Username">Enter a username:</label>
-        <input id="Username" type="text" onsubmit=" return validateForm()"><br>
+        <input id="Username" name="Username" type="text" onsubmit=" return validateForm()"><br>
 
 
 

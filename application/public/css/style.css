@@ -26,6 +26,13 @@ header{
   border: 2px solid #333;
 }
 
+.error{
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: underline black;
+}
+
 .text{
   word-wrap: break-word;
   font-size: 25px;
