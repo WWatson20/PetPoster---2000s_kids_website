@@ -4,8 +4,37 @@ const Password = document.getElementById('Password')
 const ConfirmPassword = document.getElementById('ConfirmPassword')
 const form= document.getElementById('form')
 const errorElement = document.getElementById('error')
+const content = document.getElementById("content");
 
-//Watches the form
+
+//Sourced from lecture
+function buildCardsUsingStrings(data) {
+    return `<div class="content-card" id="content-card">
+                <img class="content-img" src="${data.url}" alt="Fake photo for id: ${data.id}" />
+                    <p class="content-title">${data.title}</p>
+                </div>`;
+}
+
+window.onload = (event) => {
+    function fetchPhoto(){
+        fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
+            .then(function (response){
+                return response.json();
+            })
+            .then(function (data){
+                let contentHTML = "";
+                    data.forEach(function (data){
+                        contentHTML += buildCardsUsingStrings(data)
+                    });
+                document.getElementById('content').innerHTML = contentHTML;
+            });
+    }
+    fetchPhoto();
+};
+
+
+
+//Watches the form for registration
 form.addEventListener('submit', (e) => {
         let messages = []
 
