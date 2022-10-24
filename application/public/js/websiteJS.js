@@ -11,7 +11,9 @@ const content = document.getElementById("content");
 function buildCardsUsingStrings(data) {
     return `<div class="content-card" id="content-card">
                 <img class="content-img" src="${data.url}" alt="Fake photo for id: ${data.id}" />
+                <div class="content-info">
                     <p class="content-title">${data.title}</p>
+                    </div>
                 </div>`;
 }
 
