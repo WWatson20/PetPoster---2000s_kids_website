@@ -5,7 +5,9 @@ const ConfirmPassword = document.getElementById('ConfirmPassword')
 const form= document.getElementById('form')
 const errorElement = document.getElementById('error')
 const content = document.getElementById("content");
-
+const deleteButton = document.querySelector('#delete');
+var varCounter = 0;
+var contentCounter = 0;
 
 //Sourced from lecture
 function buildCardsUsingStrings(data) {
@@ -17,6 +19,76 @@ function buildCardsUsingStrings(data) {
                 </div>`;
 }
 
+
+
+
+function countContent(){
+    contentCounter=0
+    //c contains the content cards
+    let c = document.querySelectorAll('.content-card');
+    //for each item in c
+    [...c].forEach(d=> {
+        //count it to know how much content there is
+        contentCounter++
+        document.getElementById("contentCounter").innerHTML=contentCounter;
+    })
+    };
+
+
+deleteButton .addEventListener('click', () => {
+    contentCounter=0
+    //c contains the content cards
+    let c = document.querySelectorAll('.content-card');
+    //for each item in c
+    [...c].forEach(d=> {
+        //count it to know how much content there is
+        contentCounter++
+
+
+        d.addEventListener('click',(e)=> {
+            e.target.style.opacity = '1'
+
+
+            ///fade out
+            let t = setInterval(() =>{
+                e.target.style.opacity -= '0.01'
+                varCounter+=1
+                console.log(varCounter)
+                if (varCounter>=100){
+                    console.log("delete")
+                    ///delete
+                    e.target.remove()
+                    contentCounter--
+                    document.getElementById("contentCounter").innerHTML=contentCounter;
+                    clearInterval(t)
+                    varCounter=0
+
+
+                }
+
+            }, 10)
+
+
+
+
+
+//append card children to content card parent
+            //remove janky count
+            //update count system
+
+
+        })
+    });
+})
+
+
+
+
+
+
+
+
+
 window.onload = (event) => {
     function fetchPhoto(){
         fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
@@ -27,8 +99,11 @@ window.onload = (event) => {
                 let contentHTML = "";
                     data.forEach(function (data){
                         contentHTML += buildCardsUsingStrings(data)
+                        contentCounter++
+                        console.log(contentCounter)
                     });
                 document.getElementById('content').innerHTML = contentHTML;
+                countContent();
             });
     }
     fetchPhoto();
