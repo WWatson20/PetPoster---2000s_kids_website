@@ -12,13 +12,11 @@ var contentCounter = 0;
 //Sourced from lecture
 function buildCardsUsingStrings(data) {
     return `<div class="content-card" id="content-card">
-                <img class="content-img" src="${data.url}" alt="Fake photo for id: ${data.id}" />
-                <div class="content-info">
-                    <p class="content-title">${data.title}</p>
-                    </div>
+                            <img class="content-img" src="${data.url}" alt="Fake photo for id: ${data.id}" />
+                            <p class="content-title">${data.title}</p>
+                            
                 </div>`;
 }
-
 
 
 
@@ -37,6 +35,8 @@ function countContent(){
 
 deleteButton .addEventListener('click', () => {
     contentCounter=0
+
+
     //c contains the content cards
     let c = document.querySelectorAll('.content-card');
     //for each item in c
@@ -44,16 +44,15 @@ deleteButton .addEventListener('click', () => {
         //count it to know how much content there is
         contentCounter++
 
-
         d.addEventListener('click',(e)=> {
             e.target.style.opacity = '1'
 
 
             ///fade out
             let t = setInterval(() =>{
+
                 e.target.style.opacity -= '0.01'
                 varCounter+=1
-                console.log(varCounter)
                 if (varCounter>=100){
                     console.log("delete")
                     ///delete
@@ -88,7 +87,7 @@ deleteButton .addEventListener('click', () => {
 
 
 
-
+///places photos using buildCardsUsingStrings function to convert data to usable DOM items
 window.onload = (event) => {
     function fetchPhoto(){
         fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
@@ -99,10 +98,17 @@ window.onload = (event) => {
                 let contentHTML = "";
                     data.forEach(function (data){
                         contentHTML += buildCardsUsingStrings(data)
+
+
+
+
+
+
                         contentCounter++
                         console.log(contentCounter)
                     });
                 document.getElementById('content').innerHTML = contentHTML;
+                ///run count content once on load
                 countContent();
             });
     }

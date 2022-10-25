@@ -35,6 +35,7 @@ header{
   grid-auto-rows: 1fr 1fr 1fr;
   gap: 1rem;
   padding: 1em;
+  margin: auto;
 }
 
 .content-card{
@@ -48,31 +49,30 @@ header{
   background: lightgray;
 }
 
-.cont-img {
+.content-img {
   grid-area: info;
-  height: 100%;
-  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
   border-radius: .35rem ;
   object-fit: cover;
 
+
 }
 
-.content-info {
-
-  grid-area: info;
-  display: flex;
-  width: 100%;
-  height: 25px;
-  z-index: 3;
-  padding: .3em;
-  align-self: flex-end;
-  font-size: .8rem;
+.textFrontPage{
+background: lightgray;
 }
+
+
 .content-title {
   margin: 0;
   text-decoration: underline black;
-  background-color: transparent;
+  background: rgba(0, 0, 0, 0.3);
   opacity: 100%;
+  align-self: flex-end;
+  font-size: .8rem;
+  grid-area: info;
+  display: flex;
 }
 
 
