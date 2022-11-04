@@ -1,0 +1,23 @@
+.forms{
+    margin-left: 33%;
+    margin-top: 100px;
+    max-width: 450px;
+    padding: 35px;
+    border: 5px solid seagreen;
+    background: mediumseagreen;
+    border-radius: 25px;
+}
+
+
+input{
+    background: lightgreen;
+    border: 1px black;
+    border-radius: 100px;
+}
+
+.error{
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: underline black;
+}

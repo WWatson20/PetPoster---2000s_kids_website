@@ -1,0 +1,36 @@
+body {
+    font: 20px "Bahnschrift";
+    margin:0
+}
+
+header{
+    position: relative;
+    width: 100%;
+    background: seagreen;
+    font: 18px "Agency FB";
+    text-align: center;
+    border: 2px solid #333;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    /* negative value of footer height */
+    height: 40px;
+    background: seagreen;
+    border: 2px solid #333;
+}
+
+a {
+    color: darkblue;
+    font-size: 22px
+}
+
+main {
+    background: lightgray;
+    border: 1px solid #333;
+    min-height: 800px;
+}

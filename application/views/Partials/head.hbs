@@ -1,0 +1,10 @@
+<meta charset="UTF-8">
+<title>{{title}}</title>
+{{#each css}}
+    <link rel='stylesheet' href='/public/css/{{this}}' />
+    <link rel='stylesheet' href='/public/css/universal.css' />
+    {{/each}}
+
+{{#each js}}
+    <script defer src="/public/js/{{this}}"></script>
+{{/each}}

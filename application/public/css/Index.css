@@ -1,0 +1,52 @@
+.content{
+  background: lightgray;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1em;
+  margin: auto;
+  min-height: 800px;
+}
+
+.content-card{
+  display: grid;
+  grid-template-areas: "info";
+  max-width: 50px;
+  opacity: 100%;
+}
+
+.index-controls{
+  background: lightgray;
+}
+
+.content-img {
+  grid-area: info;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: .35rem ;
+  object-fit: cover;
+}
+
+.textFrontPage{
+background: lightgray;
+}
+
+.content-title {
+  margin: 0;
+  text-decoration: underline black;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 100%;
+  align-self: flex-end;
+  font-size: .8rem;
+  grid-area: info;
+  display: flex;
+}
+
+.text{
+  word-wrap: break-word;
+  font-size: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
