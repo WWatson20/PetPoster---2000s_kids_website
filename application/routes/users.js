@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const db = require('../conf/database');   //import from database.js the connection to the sql database
+const bcrypt = require('bcrypt');
 
 //Method:POST
 //localhost:3000/users/registration
@@ -23,16 +24,17 @@ db.query("select id from users where username=?", [username])        //sends cod
             }).then(function([results,fields]){
                         //if there's no accounts with this email
                             if(results && results.length === 0){
-                                //insert into db
-                                    return db.query('insert into users (username, email, password) value(?,?,?)' ,[username, email, password])
+                                //hashes the password
+                                    return bcrypt.hash(password, 2);
                                 //if there is an account with this email
                             }else{
                                 //throw an error
                                 throw new Error('Email already in use');
                             }
-
-
-            }).then(function([results,fields]) {
+                            //inserts the hashed password
+            }).then(function (hashedPassword){
+    return db.query('insert into users (username, email, password) value(?,?,?)' ,[username, email, hashedPassword])
+}).then(function([results,fields]) {
                 //if rows have been changed (user has been added)
                 if (results && results.affectedRows){
                     ///redirect to login page
@@ -54,13 +56,21 @@ db.query("select id from users where username=?", [username])        //sends cod
 //localhost:3000/users/login
 router.post("/login", function(req, res, next){
         const {username, password} = req.body;
-        db.query('select id, username, email from users where username=? AND password =?', [username, password])
+        db.query('select id, username, password from users where username=?', [username])
             .then(function([results, fields]){
                         if(results && results.length ===1){
-                                res.redirect('/');
+                                let dbPassword = results[0].password
+                                return bcrypt.compare(password, dbPassword);
                         } else{
                             throw new Error('Invalid user credentials');
                         }
+            })
+            .then(function (passwordsMatched){
+                if(passwordsMatched){
+                    res.redirect('/');
+                }else{
+                    throw new Error('Invalid user credentials');
+                }
             })
             .catch(function(err){
                 next(err);
