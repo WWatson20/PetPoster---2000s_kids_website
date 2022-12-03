@@ -1,15 +1,21 @@
 <body>
     <main><br>
-        <div class="forms">
-                <form>
+        <div class="forms" >
+                <form method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
                     <label for="Username">Enter a username:</label>
-                    <input id="Username" type="text"><br>
+                    <input id="Username" type="text" name="username"><br>
 
                     <label for="Password">Enter a password:</label>
-                    <input id="Password" type="password"><br>
+                    <input id="Password" type="password" name="password"><br>
 
                     <input type="submit">
                 </form>
+
+            This is my currently nonfunctional logout button:
+            <form method="POST" action="/users/logout" enctype="application/x-www-form-urlencoded">
+                    <input type="submit">
+            </form>
+
             </div>
     </main>
 </body>

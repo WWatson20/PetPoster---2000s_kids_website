@@ -2,21 +2,21 @@
     <main>
         <br>
             <div class ="forms">
-                    <form id="form">
+                    <form id="form" method="POST" action="/users/register" enctype="application/x-www-form-urlencoded">
                         <div class= "error" id="error">
                         </div>
 
                         <label for="Username">Enter a username:</label>
-                        <input id="Username" name="Username" type="text" onsubmit="return validateForm()"><br>
+                        <input id="Username"  type="text" name="username" onsubmit="return validateForm()" ><br>
 
                         <label for="Email">Enter an email:</label>
-                        <input id="Email" type="email"><br>
+                        <input id="Email" type="email" name="email"><br>
 
                         <label for="Password">Enter a password:</label>
-                        <input id="Password" type="password"><br>
+                        <input id="Password" type="password" name="password"><br>
 
                         <label for="ConfirmPassword">Confirm a password:</label>
-                        <input id="ConfirmPassword" type="password"><br>
+                        <input id="ConfirmPassword" type="password" name="cpassword"><br>
 
                         <label for="ConfirmAge">Confirm you are 13+ years of age:</label>
                         <input id="ConfirmAge" type="checkbox" required><br>
