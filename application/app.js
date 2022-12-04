@@ -8,9 +8,9 @@ const handlebars = require("express-handlebars");
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')
 (session);
+const flash = require('express-flash');
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-
 const app = express();
 
 app.engine(
@@ -42,6 +42,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('csc317 secret'));
+app.use(flash());
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use("/public", express.static(path.join(__dirname, "public")));

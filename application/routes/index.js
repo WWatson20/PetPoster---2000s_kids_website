@@ -1,4 +1,5 @@
 var express = require('express');
+const {isLoggedIn} = require('../middleware/protectors')
 var router = express.Router();
 
 /* GET home page. */
@@ -32,7 +33,7 @@ router.get("/Index", function (req, res){
 
 //Method: GET
 //localhost:3000/post
-router.get("/Post", function (req, res){
+router.get("/Post",isLoggedIn, function (req, res){
   res.render('postimage', {title: 'PetPoster - Post', css:["Forms.css"]});
 });
 

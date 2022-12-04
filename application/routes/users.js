@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const db = require('../conf/database');   //import from database.js the connection to the sql database
 const bcrypt = require('bcrypt');
+const UserError = require('../helpers/error/UserError')
 
 //Method:POST
 //localhost:3000/users/registration
@@ -29,7 +30,7 @@ db.query("select id from users where username=?", [username])        //sends cod
                                 //if there is an account with this email
                             }else{
                                 //throw an error
-                                throw new Error('Email already in use');
+                                throw new UserError('Failed Login: Invalid user credentials', "../login", 200);
                             }
                             //inserts the hashed password
             }).then(function (hashedPassword){
@@ -67,20 +68,31 @@ router.post("/login", function(req, res, next){
                                 let dbPassword = results[0].password;
                                 return bcrypt.compare(password, dbPassword);
                         } else{
-                            throw new Error('Invalid user credentials');
+                            throw new UserError('Failed Login: Invalid user credentials', "../login", 200);
                         }
             })
             .then(function (passwordsMatched){
                 if(passwordsMatched){
                     req.session.userId = loggedUserId;
                     req.session.username = loggedUsername;
+                    req.flash("success", `Hello, ${loggedUsername}, you are now logged in.`);
+                    req.session.save(function (saveErr){
+                        res.redirect('/')
+                    })
                     res.redirect('/');
                 }else{
-                    throw new Error('Invalid user credentials');
+                    throw new UserError('Failed Login: Invalid user credentials', "../login", 200);
                 }
             })
             .catch(function(err){
-                next(err);
+                if(err instanceof  UserError){
+                    req.flash('error', err.getMessage());
+                    req.session.save(function(saveErr){
+                        res.redirect(err.getRedirectURL());
+                    })
+                }else{
+                    next(err);
+                }
             })
 });
 
