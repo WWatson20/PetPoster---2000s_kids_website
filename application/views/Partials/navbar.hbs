@@ -1,6 +1,13 @@
+{{log this}}
 <nav>
     <a href="/Index">Index</a> |
     <a href="/Register">Registration</a> |
-    <a href="/Login">Login</a> |
-    <a href="/Post">Image Post</a>
+{{#if isLoggedIn}}
+        <a href="/Post">Image post</a> |
+{{else}}{{/if}}
+    {{#if isLoggedIn}}
+        <a id="logout-button">Log out</a>
+    {{else}}
+        <a href="/Login">Log in</a>
+    {{/if}}
 </nav><br>

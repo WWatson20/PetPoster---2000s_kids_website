@@ -56,10 +56,15 @@ db.query("select id from users where username=?", [username])        //sends cod
 //localhost:3000/users/login
 router.post("/login", function(req, res, next){
         const {username, password} = req.body;
+        let loggedUserId;
+        let loggedUsername;
+
         db.query('select id, username, password from users where username=?', [username])
             .then(function([results, fields]){
                         if(results && results.length ===1){
-                                let dbPassword = results[0].password
+                            loggedUserId = results [0].id;
+                            loggedUsername = results[0].username;
+                                let dbPassword = results[0].password;
                                 return bcrypt.compare(password, dbPassword);
                         } else{
                             throw new Error('Invalid user credentials');
@@ -67,6 +72,8 @@ router.post("/login", function(req, res, next){
             })
             .then(function (passwordsMatched){
                 if(passwordsMatched){
+                    req.session.userId = loggedUserId;
+                    req.session.username = loggedUsername;
                     res.redirect('/');
                 }else{
                     throw new Error('Invalid user credentials');
@@ -77,8 +84,19 @@ router.post("/login", function(req, res, next){
             })
 });
 
-
-
-
+//Method:POST
+//localhost:3000/users/login
+router.post("/logout", function(req, res, next) {
+    req.session.destroy(function (destroyError){
+        if(destroyError){
+            next(err);
+        }else{
+            res.json({
+                status: 200,
+                message: "You have been logged out"
+            });
+        }
+    })
+});
 
 module.exports = router;

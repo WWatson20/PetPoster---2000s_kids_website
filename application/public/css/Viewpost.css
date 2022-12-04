@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 0px;
+    background: lightgray;
 }
 
 textarea {
@@ -29,4 +30,10 @@ textarea {
 img{
     max-height: 400px;
     max-width: 500px;
+}
+
+plainmain {
+    background: lightgray;
+    border: 1px solid #333;
+    min-height: 800px;
 }

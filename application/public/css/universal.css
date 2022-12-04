@@ -1,12 +1,15 @@
 body {
     font: 20px "Bahnschrift";
-    margin:0
+    margin:0;
+    background: lightgray;
 }
 
 header{
     position: relative;
     width: 100%;
-    background: seagreen;
+    /*background: seagreen;*/
+    background-image: url('../images/forgpattern.jpg');
+    background-size: 100px;
     font: 18px "Agency FB";
     text-align: center;
     border: 2px solid #333;
@@ -20,17 +23,42 @@ footer{
     margin-top: 0px;
     /* negative value of footer height */
     height: 40px;
-    background: seagreen;
+    background: #549b4b;
     border: 2px solid #333;
 }
 
+h1{
+    width: fit-content;
+    background: #599e4e;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
 a {
     color: darkblue;
-    font-size: 22px
+    font-size: 22px;
+    text-decoration: underline;
+    background: #599e4e;
+}
+nav{
+    width: fit-content;
+    background: #599e4e;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0px;
 }
 
 main {
-    background: lightgray;
+    background-image: url('../images/background1.jpg');
+    background-size: 400px;
     border: 1px solid #333;
     min-height: 800px;
 }

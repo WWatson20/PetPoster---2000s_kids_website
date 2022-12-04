@@ -1,5 +1,6 @@
 .content{
-  background: lightgray;
+  background-image: url('../images/background1.jpg');
+  background-size: 400px;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
