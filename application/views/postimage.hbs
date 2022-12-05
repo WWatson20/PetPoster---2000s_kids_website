@@ -1,18 +1,18 @@
 <body>
         <main><br>
                 <div class="forms">
-                    <form>
+                    <form action="/post/create" method="post" enctype="multipart/form-data">
                             <label for="PostTitle">Enter the title of your post:</label>
-                            <input id="PostTitle" type="Text"><br>
+                            <input id="PostTitle" type="Text" name="Title" required><br>
 
                             <label for="PostDesc">Enter a post description:</label>
-                            <input id="PostDesc" type="Text"><br>
+                            <input id="PostDesc" type="Text" name="Description" required><br>
 
                             <label for="ImagePost">Choose a photo:</label>
-                            <input id="ImagePost" type="file" accept=".jpg, .png, .gif, ."><br>
+                            <input id="ImagePost" type="file" accept=".jpg, .png, .gif, ." required name="uploadImage"><br>
 
                             <label for="TOSandPrivacy">By checking this box you agree to our  <a href=""> Acceptable Use Policy</a></label>
-                            <input id="TOSandPrivacy" type="checkbox"><br>
+                            <input id="TOSandPrivacy" type="checkbox" required><br>
 
                             <input type="submit"> <br>
                     </form>

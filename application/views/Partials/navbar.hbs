@@ -1,6 +1,9 @@
 <nav>
     <a href="/Index">Index</a> |
-    <a href="/Register">Registration</a> |
+    {{#if isLoggedIn}}
+    {{else}}
+        <a href="/Register">Registration</a> |
+    {{/if}}
 {{#if isLoggedIn}}
         <a href="/Post">Image post</a> |
 {{else}}{{/if}}

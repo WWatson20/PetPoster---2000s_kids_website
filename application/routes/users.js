@@ -20,7 +20,7 @@ db.query("select id from users where username=?", [username])        //sends cod
                                     //if the request returns an account with this username
                                 }else{
                                     //throw an error
-                                    throw new Error('Username already in use');
+                                    throw new UserError('Failed Register: Username already in use', "../Register", 200);
                                 }
             }).then(function([results,fields]){
                         //if there's no accounts with this email
@@ -30,7 +30,7 @@ db.query("select id from users where username=?", [username])        //sends cod
                                 //if there is an account with this email
                             }else{
                                 //throw an error
-                                throw new UserError('Failed Login: Invalid user credentials', "../login", 200);
+                                throw new UserError('Failed Register: Email already in use', "../Register", 200);
                             }
                             //inserts the hashed password
             }).then(function (hashedPassword){
@@ -40,15 +40,21 @@ db.query("select id from users where username=?", [username])        //sends cod
                 if (results && results.affectedRows){
                     ///redirect to login page
                         res.redirect('/login');
-                        ///if user was not made
+                        ///if user was not made for some reason
                 }else{
-                    //throw error
-                    throw new Error('User could not be made');
+                    //throw generic error
+                    throw new UserError('User could not be made', "../Register", 200);
                 }
             }).catch(function(err){
-                res.redirect('/register');
-                next(err);
-            });
+                    if(err instanceof  UserError){
+                        req.flash('error', err.getMessage());
+                        req.session.save(function(saveErr){
+                            res.redirect(err.getRedirectURL());
+                        })
+                    }else{
+                        next(err);
+                    }
+})
 
 
 });

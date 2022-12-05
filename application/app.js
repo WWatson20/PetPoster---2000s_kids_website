@@ -12,7 +12,7 @@ const flash = require('express-flash');
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const app = express();
-
+const postRouter = require("./routes/post");
 app.engine(
   "hbs",
   handlebars({
@@ -20,7 +20,11 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+        nonEmptyObject: function (obj){
+            return !(obj && obj.constructor === Object && Object.keys(obj).length == 0);
+        }
+    } //adding new helpers to handlebars for extra functionality
   })
 );
 
@@ -58,7 +62,7 @@ app.use(function (req,res,next){
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
-
+app.use("/post", postRouter);
 
 /**
  * Catch all route, if we get to here then the 

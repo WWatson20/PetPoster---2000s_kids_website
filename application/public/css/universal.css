@@ -59,6 +59,43 @@ nav{
 main {
     background-image: url('../images/background1.jpg');
     background-size: 400px;
-    border: 1px solid #333;
+
     min-height: 800px;
+}
+
+.alerts-bad{
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto 0px;
+    background: #599e4e;
+    padding: 7px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 0px 0px 25px 25px;
+    color: darkred;
+}
+
+.alerts-good{
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto 0px;
+    background: #599e4e;
+    padding: 7px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.flash-message{
+    width: fit-content;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0px;
+    opacity: 100%;
 }

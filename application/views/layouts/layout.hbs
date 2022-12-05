@@ -15,6 +15,25 @@
                                 {{>navbar}}
                             </nav>
                 </header>
+                {{#if (nonEmptyObject messages)}}
+                    {{> flashmessages}}
+                    <script>
+                        var e = document.getElementById("flash-message");
+                        var tickCounter = 0;
+                        e.style.opacity = '100%'
+                        let t = setInterval(() => {
+                            if (tickCounter >= 130) {
+                                e.style.opacity -= '0.008'
+                            }
+                            tickCounter += 1
+                            //after time
+                            if (tickCounter >= 400) {
+                                ///delete the item
+                                e.remove()
+                            }
+                            }, 10);
+                    </script>
+                {{/if}}
         {{{body}}}
         {{>footer}}
   </body>

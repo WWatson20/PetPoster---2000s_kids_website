@@ -26,8 +26,6 @@ function countContent(){
         document.getElementById("contentCounter").innerHTML=contentCounter;
     })
     }
-
-
     deleteButton.addEventListener('click', () => {
         //c contains the content cards
         let c = document.querySelectorAll('.content-card');
@@ -48,10 +46,7 @@ function countContent(){
                         countContent()
                         clearInterval(t)
                         varCounter = 0
-
-
                     }
-
                 }, 10)
             })
         });
