@@ -1,15 +1,15 @@
 <nav>
-    <a href="/Index">Index</a> |
+    <a href="/Index" id="nav-links">Index</a> |
     {{#if isLoggedIn}}
     {{else}}
-        <a href="/Register">Registration</a> |
+        <a href="/Register" id="nav-links">Registration</a> |
     {{/if}}
 {{#if isLoggedIn}}
-        <a href="/Post">Image post</a> |
+        <a href="/Post" id="nav-links">Image post</a> |
 {{else}}{{/if}}
     {{#if isLoggedIn}}
         <a id="logout-button">Log out</a>
     {{else}}
-        <a href="/Login">Log in</a>
+        <a id="nav-links" href="/Login">Log in</a>
     {{/if}}
 </nav><br>

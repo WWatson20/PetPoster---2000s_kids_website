@@ -1,14 +1,12 @@
 <body>
         <plainmain>
-
             <!!!!!!!! These Posts are purely as an example for formatting !!!!!!!!!!>
-
             <div class="grid-container">
                             <div class="Posts"><br>
-                                        <div class="text"><b>This is the post's title</b><br>
-                                                Author | Creation Time<br>
-                                                <img src="/public/images/test.jpg"><br>
-                                             This is the description of the image. In this case, this is an extremely close up picture of my cat, Sammy. She is spoiled by every stretch of the imagination. Nevertheless, she is a good cat.
+                                        <div class="title-text"><b>{{currentPost.title}}</b><br>
+                                            {{currentPost.username}} | {{formatDate currentPost.createdAt}}<br>
+                                                <img id="viewFullImage" src="/{{currentPost.image}}"><br>
+                                             {{currentPost.description}}
                                         </div>
                             </div>
 

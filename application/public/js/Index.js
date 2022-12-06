@@ -54,7 +54,7 @@ function countContent(){
 
 
 ///places photos using buildCardsUsingStrings function to convert data to usable DOM items
-    window.onload = () => {
+   //window.onload = () => {
         function fetchPhoto() {
             fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
                 .then(function (response) {
@@ -71,7 +71,7 @@ function countContent(){
                     ///run count content once on load
                     countContent();
                 });
-        }
+        //}
 
         fetchPhoto();
     };

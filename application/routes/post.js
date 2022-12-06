@@ -25,7 +25,7 @@ router.post("/create", upload.single("uploadImage"), function(req, res, next){
     const userId = req.session.userId;
 
     sharp(uploadedFile)
-        .resize(200)
+        .resize(220, 220, sharp.fit.outside)
         .toFile(destinationOfThumbnail)
         .then(function (){
                 let baseSQL = `INSERT INTO posts (title, description, image, thumbnail, fk_authorId) VALUE (?,?,?,?,?)`

@@ -23,6 +23,10 @@ app.engine(
     helpers: {
         nonEmptyObject: function (obj){
             return !(obj && obj.constructor === Object && Object.keys(obj).length == 0);
+        },
+        formatDate: function(dateString){
+            console.log("Dang")
+            return new Date(dateString).toLocaleString();
         }
     } //adding new helpers to handlebars for extra functionality
   })

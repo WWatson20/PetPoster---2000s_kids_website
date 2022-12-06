@@ -1,6 +1,6 @@
 var express = require('express');
 const {isLoggedIn} = require('../middleware/protectors');
-const {getRecentPosts} = require('../middleware/posts');
+const {getRecentPosts, getPostById} = require('../middleware/posts');
 var router = express.Router();
 
 /* GET home page. */
@@ -40,6 +40,6 @@ router.get("/Post",isLoggedIn, function (req, res){
 
 //Method: GET
 //localhost:3000/posts/:id
-router.get("/posts/:id", function (req, res){
+router.get("/posts/:id(\\d+)",getPostById,  function (req, res){
   res.render('viewpost', {title: 'PetPoster - Viewing Post', css:["viewpost.css"]});
 });
