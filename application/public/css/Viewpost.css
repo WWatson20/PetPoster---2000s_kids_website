@@ -29,17 +29,13 @@ textarea {
 
 img{
     max-height: 400px;
-    max-width: 500px;
+    max-width: 600px;
     border: 5px solid seagreen;
     border-radius: 7px;
 }
 
-plainmain {
-    background: lightgray;
-    border: 1px solid #333;
-    min-height: 800px;
-}
 
 .title-text{
         font-size: 30px;
 }
+

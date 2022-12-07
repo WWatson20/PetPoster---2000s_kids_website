@@ -1,14 +1,22 @@
 <body>
     <main><br>
-        <div class="forms" >
+        <div class="forms" id="login-forms">
                 <form method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
-                    <label for="Username">Enter a username:</label>
-                    <input id="Username" type="text" name="username"><br>
+                    <div class="form-grid">
+                            <div class="form-prompts">
+                                <label for="Username">Enter a username:</label>
+                                <input id="Username" type="text" name="username"><br>
 
-                    <label for="Password">Enter a password:</label>
-                    <input id="Password" type="password" name="password"><br>
+                                <label for="Password">Enter a password:</label>
+                                <input id="Password" type="password" name="password">
+                            </div>
 
-                    <input type="submit">
+                                <label for="login-button" class="custom-login-button">
+                                    Log in
+                                </label>
+                                <input type="submit" id="login-button">
+
+                    </div>
                 </form>
         </div>
     </main>

@@ -1,20 +1,31 @@
 <body>
         <main><br>
-                <div class="forms">
+                <div class="forms" id="create-post-forms">
                     <form action="/post/create" method="post" enctype="multipart/form-data">
                             <label for="PostTitle">Enter the title of your post:</label>
-                            <input id="PostTitle" type="Text" name="title" required><br>
+                            <input id="PostTitle" type="Text" name="title" required><br><br>
 
                             <label for="PostDesc">Enter a post description:</label>
-                            <input id="PostDesc" type="Text" name="description" required><br>
+                            <input id="PostDesc" type="Text" name="description" required><br><br>
 
-                            <label for="ImagePost">Choose a photo:</label>
-                            <input id="ImagePost" type="file" accept=".jpg, .png, .gif, ." required name="uploadImage"><br>
+
+
 
                             <label for="TOSandPrivacy">By checking this box you agree to our  <a href=""> Acceptable Use Policy</a></label>
-                            <input id="TOSandPrivacy" type="checkbox" required><br>
+                            <input id="TOSandPrivacy" type="checkbox" required><br><br>
 
-                            <input type="submit"> <br>
+
+                        <div id="form-grid" class="form-grid">
+                                        <label for="ImagePost" class="custom-file-upload">
+                                                    <i class="fa fa-cloud-upload">Choose a photo</i>
+                                        </label>
+                                        <input id="ImagePost" type="file" accept=".jpg, .png, .gif, ." name="uploadImage" required>
+
+                                    <label for="submit-button" class="custom-file-submit">
+                                                <i class="fa fa-cloud-upload">Make post </i>
+                                    </label>
+                                    <input type="submit" id="submit-button">
+                        </div>
                     </form>
                 </div>
         </main>

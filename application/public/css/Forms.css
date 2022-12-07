@@ -1,5 +1,20 @@
-.forms{
-    margin-left: 33%;
+#create-post-forms{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    max-width: 565px;
+    height: 175px;
+    padding: 35px;
+    border: 5px solid seagreen;
+    background: mediumseagreen;
+    border-radius: 25px;
+}
+
+#login-forms{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 100px;
     max-width: 450px;
     padding: 35px;
@@ -7,7 +22,17 @@
     background: mediumseagreen;
     border-radius: 25px;
 }
-
+#register-forms{
+    margin-top: 2rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    padding: 35px;
+    border: 5px solid seagreen;
+    background: mediumseagreen;
+    border-radius: 25px;
+}
 
 input{
     background: lightgreen;
@@ -20,4 +45,58 @@ input{
     border-radius: 5px;
     text-align: center;
     text-decoration: underline black;
+}
+
+input[type="file"] {
+    display: none;
+}
+input[type="submit"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 2px solid seagreen;
+    background: lightgreen;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 2px 6px;
+    cursor: pointer;
+    align-self: flex-end;
+    grid-area: info;
+    width: fit-content;
+}
+.custom-file-submit {
+    border: 2px solid seagreen;
+    background: lightgreen;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 2px 6px;
+    cursor: pointer;
+    align-self: flex-end;
+    grid-area: info;
+    width: fit-content;
+    margin-left: 445px;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-areas: "info";
+}
+
+.form-prompts{
+    align-self: flex-end;
+    grid-area: info;
+    width: fit-content;
+}
+.custom-login-button{
+    border: 2px solid seagreen;
+    background: lightgreen;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 12px 12px;
+    cursor: pointer;
+    align-self: flex-end;
+    grid-area: info;
+    width: fit-content;
+    margin-left: 330px;
 }

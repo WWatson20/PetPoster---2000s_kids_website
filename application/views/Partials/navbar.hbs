@@ -13,3 +13,10 @@
         <a id="nav-links" href="/Login">Log in</a>
     {{/if}}
 </nav><br>
+
+
+    <form class="search-bar" method="GET" action="/post/search" enctype="application/x-www-form-urlencoded">
+            <input id="search-text" class="search-text" name="searchTerm" type="text" value={{searchValue}}></div>
+            <button type="submit" class="search-button fas fa-search">search</button>
+    </form>
+

@@ -41,5 +41,27 @@ router.post("/create", upload.single("uploadImage"), function(req, res, next){
         })
         .catch(err => next(err));
 })
+//localhost:3000/posts/search
+router.get("/search", function(req, res, next){
+    let searchTerm = `%${req.query.searchTerm}%`;
+    let originalSearchTerm = req.query.searchTerm;
+    let baseSQL = `select 
+id, title,description, thumbnail, concat_ws(" ",title,description) as haystack
+From posts
+HAVING haystack like ?;`;
+ db.execute(baseSQL, [searchTerm])
+     .then(function ([results, fields]){
+         res.locals.results = results;
+         res.locals.searchValue = originalSearchTerm;
+         if(results.length==0){
+             req.flash("error",`No results found: showing most recent posts`);
+             res.redirect('/index')
+         }else{
+             req.flash("success",`${results.length} results found`);
+             req.session.save(function (saveErr){
+                 res.render('index', { title: 'PetPoster - Index', name:"William Watson", css:["Index.css"] });
+             })}
 
+     })
+})
 module.exports = router;

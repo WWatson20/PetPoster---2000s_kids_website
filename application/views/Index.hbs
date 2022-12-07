@@ -1,20 +1,19 @@
+{{!
 <div class = "textFrontPage">
     There are <contentCounter id="contentCounter"></contentCounter> items
 </div>
-
 <div class="index-controls">
     <button id="delete" type="button">Delete items</button>
 </div>
+}}
 
 <div id="content" class="content">
         {{#each results}}
             <div class="content-card" id="content-card">
-                <img class="content-img" id="content-img" src="{{this.thumbnail}}" alt="">
+                    <a href="/posts/{{this.id}}" id="index-links">
+                            <img class="content-img" id="content-img" src="/{{this.thumbnail}}">
+                    </a>
                 <p class="content-title">{{this.title}}</p>
-                <a href="/posts/{{this.id}}" id="index-links">
-                    View Post
-                </a>
-
             </div>
         {{/each}}
     <br>

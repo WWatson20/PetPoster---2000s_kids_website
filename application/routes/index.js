@@ -15,7 +15,7 @@ module.exports = router;
 //Method: GET
 //localhost:3000/login
 router.get("/Login", function (req, res){
-  res.render('login', {title: 'PetPoster - Login', css:["Forms.css"]});
+  res.render('login', {title: 'PetPoster - Login', css:["forms.css"]});
 });
 
 
@@ -35,7 +35,7 @@ router.get("/Index", getRecentPosts, function (req, res){
 //Method: GET
 //localhost:3000/post
 router.get("/Post",isLoggedIn, function (req, res){
-  res.render('postimage', {title: 'PetPoster - Post', css:["Forms.css"]});
+  res.render('postimage', {title: 'PetPoster - Post', css:["forms.css"]});
 });
 
 //Method: GET

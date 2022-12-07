@@ -55,13 +55,13 @@ nav{
     margin-top: 0;
     margin-bottom: 0px;
 }
-
-main {
+body{
+    min-height: fit-content;
+    margin-bottom: 20px;
     background-image: url('../images/background1.jpg');
     background-size: 400px;
-
-    min-height: 800px;
 }
+
 
 .alerts-bad{
     width: fit-content;
@@ -98,4 +98,27 @@ main {
     margin-top: 0;
     margin-bottom: 0px;
     opacity: 100%;
+}
+
+.search-button{
+    background: green;
+    border-radius: 1rem;
+    border: solid black 2px;
+    align-self: flex-end;
+    grid-area: info;
+    width: fit-content;
+    margin-left: 150px;
+}
+
+.search-text{
+    background: lightgreen;
+    border: solid #333333 2px;
+    border-radius: 1rem;
+    grid-area: info;
+}
+
+.search-bar{
+    display: grid;
+    grid-template-areas: "info";
+    padding-bottom: 3px;
 }
