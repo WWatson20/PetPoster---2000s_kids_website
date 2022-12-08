@@ -13,6 +13,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const app = express();
 const postRouter = require("./routes/post");
+const commentsRouter = require('./routes/comments')
 app.engine(
   "hbs",
   handlebars({
@@ -25,7 +26,6 @@ app.engine(
             return !(obj && obj.constructor === Object && Object.keys(obj).length == 0);
         },
         formatDate: function(dateString){
-            console.log("Dang")
             return new Date(dateString).toLocaleString();
         }
     } //adding new helpers to handlebars for extra functionality
@@ -67,7 +67,7 @@ app.use(function (req,res,next){
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
 app.use("/post", postRouter);
-
+app.use("/comments", commentsRouter);
 /**
  * Catch all route, if we get to here then the 
  * resource requested could not be found.

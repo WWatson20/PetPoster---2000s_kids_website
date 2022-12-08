@@ -25,6 +25,10 @@
 textarea {
     resize: none;
     background: lightgreen;
+    border: 3px solid seagreen;
+    border-radius: 25px;
+    text-indent: 10px;
+    font-size: 18px;
 }
 
 img{

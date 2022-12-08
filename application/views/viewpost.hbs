@@ -1,6 +1,4 @@
 <body>
-
-            <!!!!!!!! These Posts are purely as an example for formatting !!!!!!!!!!>
             <div class="grid-container">
                             <div class="Posts"><br>
                                         <div class="title-text"><b>{{currentPost.title}}</b><br>
@@ -14,17 +12,23 @@
                             <div class="commentForm">
                                 <form id="CommentForm">
                                 <label for="PostComment">Enter a Comment:</label><br>
-                                    <textarea rows="23" cols="60" placeholder="Comment here"></textarea> <br>
-                                    <input type="submit"><br>
+                                    <textarea id="comment-text" rows="16" cols="50" placeholder="Comment here"></textarea> <br><br>
+
+                                    <label for ="comment-button" class="custom-comment-button">Comment</label>
+                                    <i id="comment-button" data-postid="{{currentPost.id}}" class="fa fa-comment comment-box-button" aria-hidden="true"></i><br>
+
                                 </form>
+
                             </div>
             </div>
+            <div id="comment-list">
+                {{#each currentPost.comments}}
+                    {{> comment this}}
+                {{/each}}
+            </div>
 
-            <!Example comments to showcase the formatting>
-            <div class="commentForm"> This is example text to show off where the comments will go.</div>
-            <div class="commentForm"> This is another comment!</div>
-            <div class="commentForm"> Wow! A third comment!</div>
-            <div class="commentForm"> I can't believe we got 4 comments on this post! way to go! that's a lot of comments to get on a post! I'm going to make this comment extra long to showcase what it will look like when there's long comments in this comment section!</div>
+
             <br>
 
 </body>
+

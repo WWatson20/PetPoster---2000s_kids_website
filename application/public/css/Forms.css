@@ -38,6 +38,7 @@ input{
     background: lightgreen;
     border: 1px black;
     border-radius: 100px;
+    text-indent: 6px;
 }
 
 .error{
@@ -59,7 +60,7 @@ input[type="submit"] {
     background: lightgreen;
     border-radius: 25px;
     display: inline-block;
-    padding: 2px 6px;
+    padding: 10px 10px;
     cursor: pointer;
     align-self: flex-end;
     grid-area: info;
@@ -70,7 +71,7 @@ input[type="submit"] {
     background: lightgreen;
     border-radius: 25px;
     display: inline-block;
-    padding: 2px 6px;
+    padding:10px 10px;
     cursor: pointer;
     align-self: flex-end;
     grid-area: info;
@@ -98,5 +99,17 @@ input[type="submit"] {
     align-self: flex-end;
     grid-area: info;
     width: fit-content;
-    margin-left: 330px;
+    margin-left: 350px;
+}
+.custom-comment-button{
+    border: 2px solid seagreen;
+    background: lightgreen;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 12px 12px;
+    cursor: pointer;
+    align-self: flex-end;
+    grid-area: info;
+    width: fit-content;
+
 }

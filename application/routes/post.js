@@ -33,7 +33,7 @@ router.post("/create", upload.single("uploadImage"), function(req, res, next){
         })
         .then(function([results,fields]){
             if(results && results.affectedRows){
-                        req.flash("success", "Your post has been created!");
+                    req.flash("success", "Your post has been created!");
                     req.session.save(function (saveErr){
                         res.redirect('/post');
                     })
