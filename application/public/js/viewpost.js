@@ -7,11 +7,12 @@ function addNewComment(data){
                                                             <div>${new Date().toLocaleString("en-US",{timeStyle: "long", dateStyle: "long"})}</div>
 </div>`;
         commentList.append(newComment.content);
-        document.getElementById(`message-${data.commentId}`).scrollIntoView();
+        //document.getElementById(`message-${data.commentId}`).scrollIntoView();
 }
 
 document.getElementById('comment-button')
     .addEventListener('click', function(ev){
+        event.preventDefault();
             let commentTextElement = document.getElementById('comment-text');
             let commentText = commentTextElement.value;
             let postId = ev.currentTarget.dataset.postid;

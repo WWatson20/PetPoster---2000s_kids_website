@@ -7,6 +7,7 @@ router.post("/create", function(req,res,next){
         if(!req.session.userId){
                 req.flash("error", "You must be logged in to comment");
                                 req.session.save(function (saveError){
+
                 })
         }else{
                 let {comment, postId} = req.body;

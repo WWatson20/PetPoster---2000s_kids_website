@@ -22,6 +22,7 @@
                         var tickCounter = 0;
                         e.style.opacity = '100%'
                         if (e.innerHTML.length>=1){
+                            console.log(e.innerHTML.length)
                                     let t = setInterval(() => {
                                         if (tickCounter >= 130) {
                                             e.style.opacity -= '0.008'
