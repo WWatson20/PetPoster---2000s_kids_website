@@ -19,7 +19,9 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. npm install
+1. cd into applications with command prompt
+2.npm install
+3. builddb to connect to mysql
 
 ## Run Instructions
 1. npm start

@@ -23,7 +23,7 @@ router.get("/Login", function (req, res){
 //localhost:3000/register
 router.get("/register", function (req, res){
   ///Commented out Registration,.js for data entry purposes
-  res.render('registration', {title: 'PetPoster - Register', css:["Forms.css"], /*js: ["Registration.js"]*/ });
+  res.render('registration', {title: 'PetPoster - Register', css:["Forms.css"], js: ["Registration.js"] });
 });
 
 //Method: GET
